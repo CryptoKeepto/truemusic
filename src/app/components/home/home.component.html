@@ -1,0 +1,20 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h3 class="display-3">Play</h3>
+    <p class="lead">หลากหลาย Playlist ตามอารมณ์</p>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2" *ngFor="let item of genres">
+      <div class="card">
+        <img class="card-img-top" [src]="item.genre_pic" />
+        <div class="card-body">
+          {{ item.genre_name }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
