@@ -9,12 +9,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { DocComponent } from './components/doc/doc.component';
+import { AlbumsComponent } from './components/albums/albums.component';
 
 // service
 import { GenresService } from "./services/genres.service";
+import { AlbumsService } from "./services/albums.service";
+import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
 
 const appRouter: Routes = [
   { path: "", component: HomeComponent },
+  { path: "albums", component: AlbumsComponent },
   { path: "doc", component: DocComponent }
 ];
 
@@ -23,7 +27,9 @@ const appRouter: Routes = [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    DocComponent
+    DocComponent,
+    AlbumsComponent,
+    AlbumDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,8 @@ const appRouter: Routes = [
     RouterModule.forRoot(appRouter)
   ],
   providers: [
-    GenresService
+    GenresService,
+    AlbumsService
   ],
   bootstrap: [AppComponent]
 })

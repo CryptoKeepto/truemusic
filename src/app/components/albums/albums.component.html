@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-md-2" *ngFor="let item of albums" (click)="goDetail(item)">
+      <div class="card">
+        <img class="card-img-top" [src]="item.album_pic" />
+        <div class="card-body">
+          {{ item.album_name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<app-album-detail [data]="album"></app-album-detail>

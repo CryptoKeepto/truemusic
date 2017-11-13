@@ -10,9 +10,22 @@ router.get("/genres", (req, res) => {
     })
 })
 
-router.post("/new", (req, res) => {
-    console.log(req.body);
-    res.end("Hello, " + req.body.name);
+router.get("/albums", (req, res) => {
+    let sql = `SELECT * FROM albums`;
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+        res.json(result);
+    })
+})
+
+// ค้นหาเพลงที่อยู่ใน album
+router.get("/album/:id", (req, res) => {
+    let id = req.params.id;
+    let sql = `SELECT * FROM songs INNER JOIN albums ON songs.album_id = albums.album_id WHERE albums.album_id = ${id}`;
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+        res.json(result);
+    })
 })
 
 module.exports = router;
