@@ -1,3 +1,70 @@
-<p>
-  doc works!
-</p>
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="display-2">API</h1>
+    <div class="card">
+      <h3>Genres</h3>
+      <div class="card-body">
+        <p>GET</p>
+        <p>ดึง Genres ทั้งหมด</p>
+        <b>http://sittikiat.streetfood.in.th:1111/api/genres</b>
+      </div>
+      <div class="card">
+          Response
+          <ul>
+            <li><b>genre_id</b> รหัสหมวดหมู่</li>
+            <li><b>genre_name</b> ชื่อหมวดหมู่</li>
+            <li><b>genre_pic</b> รูปภาพหมวดหมู่</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <h3>Albums</h3>
+      <div class="card-body">
+        <p>GET</p>
+        <p>ดึง Albums ทั้งหมด</p>
+        <b>http://sittikiat.streetfood.in.th:1111/api/albums</b>
+      </div>
+      <div class="card">
+          Response
+          <ul>
+            <li><b>album_id</b> รหัสอัลบั้ม</li>
+            <li><b>album_name</b> ชื่ออัลบั้ม</li>
+            <li><b>album_pic</b> รูปภาพอัลบั้ม</li>
+          </ul>
+      </div>
+      <hr>
+      <div class="card-body">
+        <p>GET</p>
+        <p>ดึงเฉพาะบาง Album</p>
+        <b>http://sittikiat.streetfood.in.th:1111/api/album/:id</b>
+        <p>ต้องการ id ของ album</p>
+        <b>ตัวอย่าง</b>
+        <p>http://sittikiat.streetfood.in.th:1111/api/album/1</p>
+      </div>
+      <div class="card">
+          Response
+          <ul>
+            <li><b>song_id</b> รหัสเพลง</li>
+            <li><b>song_name</b> ชื่อเพลง</li>
+            <li><b>song_file</b> ไฟล์เพลง</li>
+            <li><b>song_pic</b> รูปภาพเพลง</li>
+            <li><b>artist_id</b> รหัสศิลปิน</li>
+            <li><b>album_id</b> รหัสอัลบั้ม</li>
+            <li><b>album_name</b> ชื่ออัลบั้ม</li>
+            <li><b>album_pic</b> รูปภาพอัลบั้ม</li>
+            <li><b>genre_id</b> รหัสหมวดหมู่</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>

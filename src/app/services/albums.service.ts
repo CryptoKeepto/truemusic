@@ -8,7 +8,8 @@ import { Albums } from "../models/albums.model";
 @Injectable()
 export class AlbumsService {
 
-  private url: string = "http://localhost:3000/api";
+  // private url: string = "http://localhost:3000/api";
+  private url: string = "http://sittikiat.streetfood.in.th:1111/api";
 
   constructor(private http: Http) { }
 

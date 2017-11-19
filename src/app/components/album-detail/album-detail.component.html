@@ -1,18 +1,20 @@
 <div class="container-fluid" *ngIf="data">
   <div class="row">
     <div class="col-md-3">
-      <img class="img-thumbnail" [src]="data.album_pic">
-      <h4>{{ data.album_name }}</h4>
+      <img class="img-thumbnail" [src]="albumTitle.album_pic">
+      <h4>{{ albumTitle.album_name }}</h4>
     </div>
+
     <div class="col-md-9">
       <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item" *ngFor="let d of data">
+          <p>{{ d.song_name }}</p>
+          <audio controls>
+            <source [src]="d.song_file">
+          </audio>
+        </li>
       </ul>
     </div>
+    
   </div>
 </div>
-

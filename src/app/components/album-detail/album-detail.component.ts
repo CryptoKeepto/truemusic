@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AlbumsService } from "../../services/albums.service";
-import { Albums } from "../../models/albums.model";
+import { Songs } from "../../models/songs.model";
 
 @Component({
   selector: 'app-album-detail',
@@ -9,19 +9,14 @@ import { Albums } from "../../models/albums.model";
 })
 export class AlbumDetailComponent implements OnInit {
 
-  @Input() data: Albums;
+  @Input() data: Songs;
+  @Input() albumTitle: any;
 
-
-  constructor(private albumsService: AlbumsService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.getAlbum();
   }
 
-  private getAlbum(): void {
-    this.albumsService.getAlbum(1).subscribe(
-      (res) => console.log(res)
-    )
-  }
+
 
 }

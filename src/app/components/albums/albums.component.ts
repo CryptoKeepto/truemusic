@@ -10,8 +10,8 @@ import { AlbumsService } from "../../services/albums.service";
 export class AlbumsComponent implements OnInit {
 
   private albums: Albums[];
-  private album: Albums[];
-  private id: number;
+  public album: any;
+  public albumTitle: any;
 
   constructor(private albumsService: AlbumsService) { }
 
@@ -25,13 +25,19 @@ export class AlbumsComponent implements OnInit {
       (res) => {
         this.albums = res
       },
-      (err) => console.log(err),
-      () => console.log("success")
+      (err) => console.log(err)
     )
   }
 
   private goDetail(album): void {
-    this.album = album;
+    // send to child
+    this.albumTitle = album;
+
+    let id = album.album_id;
+    this.albumsService.getAlbum(id).subscribe(
+      (res) => this.album = res,
+      (err) => alert(err)
+    )
   }
 
 
