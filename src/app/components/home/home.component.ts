@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
     this.genresService.getGenres().subscribe(
       (res) => {
         this.genres = res
-        console.log(this.genres)
       },
       (err) => console.log(err),
       () => console.log("success")

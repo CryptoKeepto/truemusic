@@ -10,16 +10,20 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { DocComponent } from './components/doc/doc.component';
 import { AlbumsComponent } from './components/albums/albums.component';
+import { ChatRoomComponent } from './components/chat-room/chat-room.component';
+import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
 
 // service
 import { GenresService } from "./services/genres.service";
 import { AlbumsService } from "./services/albums.service";
-import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
+import { ChatRoomsService } from "./services/chat-rooms.service";
+
 
 const appRouter: Routes = [
   { path: "", component: HomeComponent },
   { path: "albums", component: AlbumsComponent },
-  { path: "doc", component: DocComponent }
+  { path: "doc", component: DocComponent },
+  { path: "chatroom", component: ChatRoomComponent }
 ];
 
 @NgModule({
@@ -29,7 +33,8 @@ const appRouter: Routes = [
     HomeComponent,
     DocComponent,
     AlbumsComponent,
-    AlbumDetailComponent
+    AlbumDetailComponent,
+    ChatRoomComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ const appRouter: Routes = [
   ],
   providers: [
     GenresService,
+    ChatRoomsService,
     AlbumsService
   ],
   bootstrap: [AppComponent]

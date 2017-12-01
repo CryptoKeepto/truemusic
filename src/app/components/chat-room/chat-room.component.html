@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let c of chatroom" (click)="goDetail(c.chat_room_id)">
+            <div class="card">
+                {{ c.chat_room_name }}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+               radio
+            </div>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    <form novalidate [formGroup]="myForm" (ngSubmit)="send()">
+                        <div class="input-group">
+                            <input type="text" formControlName="message" placeholder="พิมพ์ข้อความที่นี่..." class="form-control">
+                            <button type="submit" class="input-group-addon btn">send</button>
+                        </div>
+                    </form>
+                </li>
+                <!-- <li class="list-group-item" *ngFor="let cd of chatroomDetail">
+                    <img [src]="cd.user_image" style="width: 30px; height: 30px;">{{ cd.user_name }} : {{ cd.message_detail }}
+                </li> -->
+                <li class="list-group-item" *ngFor="let item of text">
+                    {{ item }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
