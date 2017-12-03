@@ -1,0 +1,18 @@
+<div class="container">
+  <h3>Login</h3>
+  <hr>
+  <form novalidate [formGroup]="myForm" (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="email">email</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="password" id="password" class="form-control" formControlName="password" placeholder="อย่างน้อย 6 ตัว">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success" type="submit" [disabled]="!myForm.valid">login</button>
+    </div>
+  </form>
+
+</div>
