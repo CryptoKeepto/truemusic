@@ -16,6 +16,7 @@ import { AlbumsService } from "./services/albums.service";
 import { ChatRoomsService } from "./services/chat-rooms.service";
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from "./services/auth.service";
+import { SignupComponent } from './components/signup/signup.component';
 
 
 
@@ -24,7 +25,8 @@ const appRouter: Routes = [
   { path: "albums", component: AlbumsComponent },
   { path: "doc", component: DocComponent },
   { path: "chatroom", component: ChatRoomComponent },
-  { path: "login", component: LoginComponent }
+  { path: "login", component: LoginComponent },
+  { path: "signup", component: SignupComponent }
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const appRouter: Routes = [
     AlbumsComponent,
     AlbumDetailComponent,
     ChatRoomComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
